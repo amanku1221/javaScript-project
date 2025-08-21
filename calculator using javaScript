@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<style>
+  body { display:flex;justify-content:center;align-items:center;height:100vh;background:#222;font-family:sans-serif;}
+  .calc {background:#333;padding:20px;border-radius:10px;}
+  input {width:100%;height:40px;margin-bottom:10px;font-size:18px;text-align:right;}
+  button {width:50px;height:50px;margin:5px;font-size:18px;}
+</style>
+</head>
+<body>
+<div class="calc">
+  <input type="text" id="display" disabled>
+  <div>
+    <button onclick="clr()">C</button>
+    <button onclick="del()">⌫</button>
+    <button onclick="append('%')">%</button>
+    <button onclick="append('/')">/</button><br>
+    <button onclick="append('7')">7</button>
+    <button onclick="append('8')">8</button>
+    <button onclick="append('9')">9</button>
+    <button onclick="append('*')">*</button><br>
+    <button onclick="append('4')">4</button>
+    <button onclick="append('5')">5</button>
+    <button onclick="append('6')">6</button>
+    <button onclick="append('-')">-</button><br>
+    <button onclick="append('1')">1</button>
+    <button onclick="append('2')">2</button>
+    <button onclick="append('3')">3</button>
+    <button onclick="append('+')">+</button><br>
+    <button onclick="append('0')">0</button>
+    <button onclick="append('.')">.</button>
+    <button onclick="calculate()" style="width:112px">=</button>
+  </div>
+</div>
+<script>
+let display=document.getElementById('display');
+function append(val){display.value+=val;}
+function clr(){display.value='';}
+function del(){display.value=display.value.slice(0,-1);}
+function calculate(){display.value=eval(display.value);}
+</script>
+</body>
+</html>
